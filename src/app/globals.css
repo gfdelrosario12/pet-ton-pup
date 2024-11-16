@@ -1,42 +1,135 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Centralized wrapper styles */
+.wrapper {
+  width: 100%;
+  max-width: 1024px; /* Desktop max size */
+  height: 100%;
+  max-height: 768px; /* Desktop max size */
+  margin: 0 auto;
+  border: 1px solid #ccc; /* Optional: for visual debugging */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #f9f9f9; /* Optional: mimic a Telegram-like background */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 375px;
+    max-height: 667px;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .wrapper {
+    max-width: 768px;
+    max-height: 1024px;
   }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .wrapper {
+    max-width: 1024px;
+    max-height: 768px;
+  }
+}
+
+/* Floating Button styles */
+.floating-buttons {
+  position: fixed;
+  z-index: 1000; /* Ensures the floating buttons are on top */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Space between buttons */
+}
+
+.floating-button-right {
+  right: 10px;
+}
+
+.floating-button-left {
+  left: 10px;
+}
+
+.floating-button {
+  background-color: white;
+  color: black;
+  width: 60px;
+  height: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.floating-button:hover {
+  background-color: #f0f0f0;
+}
+
+.floating-button-icon {
+  font-size: 28px;
+}
+
+/* Bottom Navigation styles */
+.bottom-navigation {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
+.bottom-navigation-action {
+  transition: transform 0.2s;
+}
+
+.bottom-navigation-action:hover {
+  transform: scale(1.2);
+}
+
+.bottom-navigation-action-label {
+  font-size: 12px;
+}
+
+/* Optional: Styling for icons inside BottomNavigation */
+.bottom-navigation-action .MuiSvgIcon-root {
+  font-size: 24px;
+}
+
+/* External CSS */
+.MuiBottomNavigationAction-label {
+  color: black; /* Set the label color to black */
+}
+
+/* Optional: Additional styling for hover state */
+.MuiBottomNavigationAction-root:hover .MuiBottomNavigationAction-label {
+  color: black; /* Ensures the label stays black on hover */
+}
+
+/* Set both icon and label to black by default */
+.MuiBottomNavigationAction-label,
+.MuiSvgIcon-root {
+  color: black;  /* Set the label and icon color to black */
+}
+
+/* Set the active (selected) state label and icon color */
+.Mui-selected .MuiBottomNavigationAction-label,
+.Mui-selected .MuiSvgIcon-root {
+  color: black;  /* Set the label and icon color to black when selected */
+}
+
+/* Optional: Ensure icons remain black on hover */
+.MuiBottomNavigationAction-root:hover .MuiSvgIcon-root {
+  color: black;  /* Set icon color to black on hover */
+}
+
+.MuiBottomNavigationAction-root:hover .MuiBottomNavigationAction-label {
+  color: black;  /* Set label color to black on hover */
 }
