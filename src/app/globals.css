@@ -133,3 +133,117 @@
 .MuiBottomNavigationAction-root:hover .MuiBottomNavigationAction-label {
   color: black;  /* Set label color to black on hover */
 }
+
+.wrapper {
+  background-image: url('/assets/BG.png'); /* Replace with the correct path */
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width of the parent */
+  position: relative;
+}
+
+.image-container img {
+  max-width: 100%; /* Scale down the image to fit the screen */
+  max-height: 30%; /* Prevent overflow on smaller devices */
+  object-fit: contain; /* Ensure the image maintains its aspect ratio */
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.edit-container,
+.display-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.name-input {
+  font-size: 1.5rem;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pencil-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.save-icon {
+  color: green;
+}
+
+.edit-icon {
+  color: blue;
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px; /* Adjust the value to move it down */
+  position: relative; /* Keeps it independent of other elements */
+}
+
+.edit-container,
+.display-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.name-input {
+  font-size: 1.5rem;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pencil-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.save-icon {
+  color: green;
+}
+
+.edit-icon {
+  color: blue;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
